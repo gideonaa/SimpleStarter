@@ -1,0 +1,228 @@
+<!-- layout.nunjucks -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://via.placeholder.com/70x70">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My title</title>
+</head>
+
+<body>
+    <!-- Header Navigation Partial -->
+<header>
+    <nav>
+        <a href="/"><img alt="Logo" src="https://via.placeholder.com/200x70?text=Logo" height="70"></a>
+        <ul>
+            <li>Menu Item 1</li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a>
+                <ul>
+                    <li><a href="#">Sublink with a long name</a></li>
+                    <li><a href="#">Short sublink</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <h1>Page Heading with <i>Italics</i> and <u>Underline</u></h1>
+    <p>Page Subheading with <mark>highlighting</mark></p>
+    <br>
+    <p><a href="#"><i>Italic Link Button</i></a><a href="#"><b>Bold Link Button &rarr;</b></a></p>
+</header>
+
+    <!-- You write code for this content block in another file -->
+    
+<main>
+<ul>
+    <li><code>&lt;a&gt;</code> <small>&mdash; text links</small>
+        <ul>
+            <li><code>&lt;a&gt;&lt;b&gt;</code>, <code>&lt;a&gt;&lt;strong&gt;</code> <small>&mdash; solid
+                    link buttons</small>
+            </li>
+            <li><code>&lt;a&gt;&lt;em&gt;</code>, <code>&lt;a&gt;&lt;i&gt;</code> <small>&mdash; outlined
+                    link buttons</small>
+            </li>
+        </ul>
+    </li>
+    <li><code>&lt;article&gt;</code> <small>&mdash; content area with normal styling</small>
+        <ul>
+            <li><code>&lt;article&gt;&lt;aside&gt;</code> <small>&mdash; text callout</small>
+            </li>
+        </ul>
+    </li>
+    <li><code>&lt;blockquote&gt;</code> <small>&mdash; quote callout</small>
+        <ul>
+            <li><code>&lt;blockquote&gt;&lt;footer&gt;</code> <small>&mdash; quote attribution</small>
+            </li>
+        </ul>
+    </li>
+    <li><code>&lt;body&gt;</code> <small>&mdash; default parent element</small></li>
+    <li><code>&lt;button&gt;</code> <small>&mdash; form buttons</small></li>
+    <li><code>&lt;code&gt;</code> <small>&mdash; inline code highlighting</small></li>
+    <li><code>&lt;details&gt;</code> <small>&mdash; default expandable content section</small>
+        <ul>
+            <li><code>&lt;details&gt;&lt;summary&gt;</code> <small>&mdash; expandable heading</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;div&gt;</code> <small>&mdash; unstyled element</small></li>
+    <li><code>&lt;figure&gt;</code> <small>&mdash; image callouts</small>
+        <ul>
+            <li><code>&lt;figure&gt;&lt;figcaption&gt;</code> <small>&mdash; image callout captions</small>
+            </li>
+        </ul>
+    </li>
+    <li><code>&lt;footer&gt;</code> <small>&mdash; footer area</small></li>
+    <li><code>&lt;form&gt;</code> <small>&mdash; small form area</small>
+        <ul>
+            <li><code>&lt;form&gt;&lt;input&gt;</code> <small>&mdash; short input field</small></li>
+            <li><code>&lt;form&gt;&lt;label&gt;</code> <small>&mdash; form field labels</small></li>
+            <li><code>&lt;form&gt;&lt;select&gt;</code> <small>&mdash; dropdown options container</small>
+                <ul>
+                    <li><code>&lt;form&gt;&lt;select&gt;&lt;option&gt;</code> <small>&mdash; dropdown option
+                            items</small></li>
+                </ul>
+            </li>
+            <li><code>&lt;form&gt;&lt;textarea&gt;</code> <small>&mdash; large input field</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;header&gt;</code> <small>&mdash; content area with centered styling</small></li>
+    <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,
+        <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> <small>&mdash; headings</small></li>
+    <li><code>&lt;hr&gt;</code> <small>&mdash; horizontal rule (divider)</small></li>
+    <li><code>&lt;main&gt;</code> <small>&mdash; main content area</small></li>
+    <li><code>&lt;mark&gt;</code> <small>&mdash; text highlighting</small></li>
+    <li><code>&lt;nav&gt;</code> <small>&mdash; top navigation</small>
+        <ul>
+            <li><code>&lt;nav&gt;&lt;ul&gt;</code> <small>&mdash; nav links container</small></li>
+            <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; nav link items</small></li>
+            <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;ul&gt;</code> <small>&mdash; nav dropdown
+                    container</small></li>
+            <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; nav dropdown
+                    link items</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;ol&gt;</code> <small>&mdash; numbered list container</small>
+        <ul>
+            <li><code>&lt;ol&gt;&lt;li&gt;</code> <small>&mdash; numbered list items</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;p&gt;</code> <small>&mdash; paragraph tag</small></li>
+    <li><code>&lt;pre&gt;</code> <small>&mdash; preformatted text</small>
+        <ul>
+            <li><code>&lt;pre&gt;&lt;code&gt;</code> <small>&mdash; code block</small></li>
+            <li><code>&lt;pre&gt;&lt;samp&gt;</code> <small>&mdash; computer output block</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;samp&gt;</code> <small>&mdash; inline computer output</small></li>
+    <li><code>&lt;section&gt;</code> <small>&mdash; content area for centered / special content</small>
+        <ul>
+            <li><code>&lt;section&gt;&lt;aside&gt;</code> <small>&mdash; content card</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;small&gt;</code> <small>&mdash; smaller text</small></li>
+    <li><code>&lt;sup&gt;</code> <small>&mdash; raised text (notification bubbles)</small></li>
+    <li><code>&lt;table&gt;</code> <small>&mdash; data table</small>
+        <ul>
+            <li><code>&lt;table&gt;&lt;td&gt;</code> <small>&mdash; data table cell</small></li>
+            <li><code>&lt;table&gt;&lt;th&gt;</code> <small>&mdash; data table header cell</small></li>
+            <li><code>&lt;table&gt;&lt;thead&gt;</code> <small>&mdash; data table header section</small>
+            </li>
+            <li><code>&lt;table&gt;&lt;tr&gt;</code> <small>&mdash; data table row</small></li>
+        </ul>
+    </li>
+    <li><code>&lt;ul&gt;</code> <small>&mdash; unordered list container</small>
+        <ul>
+            <li><code>&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; unordered list item</small></li>
+        </ul>
+    </li>
+</ul>
+<hr>
+<article id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+        <summary>Why would I use this?</summary>
+        <p>If you just want to launch already.</p>
+        <p><sup>PRO TIP</sup> An MVP is a temporary site, it doesn't have to be <i>and shouldn't be</i> perfect.
+        </p>
+    </details>
+    <details>
+        <summary>What skills will I need?</summary>
+        <p>Mostly HTML, maybe a hint of CSS if you want to get fancy.</p>
+        <p><i>CSS</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress max="100" value="5">5</progress></p>
+        <p><i>Design</i>&nbsp;&nbsp; <progress max="100" value="0">0</progress></p>
+        <p><i>HTML</i>&nbsp;&nbsp;&nbsp;&nbsp; <progress max="100" value="100">100</progress></p>
+    </details>
+    <details>
+        <summary>Is there a minified version?</summary>
+        <p>No, you don't need one for an MVP.</p>
+    </details>
+    <details>
+        <summary>How can I improve my design?</summary>
+        <p>Here are some helpful resources:</p>
+        <ul>
+            <li>Emojis - <a href="https://www.emojicopy.com/" target="_blank">Emojicopy
+                    &nearr;</a></li>
+            <li>Icons - <a href="https://www.toptal.com/designers/htmlarrows/" target="_blank">HTML Entities
+                    List by TopTal
+                    &nearr;</a></li>
+            <li>Icons - <a href="https://thenounproject.com/" target="_blank">TheNounProject
+                    &nearr;</a></li>
+            <li>Illustrations - <a href="https://gallery.manypixels.co/" target="_blank">Manypixels
+                    &nearr;</a></li>
+            <li>Illustrations - <a href="https://undraw.co/illustrations" target="_blank">Undraw &nearr;</a>
+            </li>
+            <li>Logo - <a href="https://www.namecheap.com/logo-maker/app/" target="_blank">Namecheap Logo
+                    Maker &nearr;</a></li>
+            <li>Product Shots - <a href="https://www.screely.com/" target="_blank">Screely &nearr;</a></li>
+            <li>Stock Photos - <a href="https://www.pexels.com/" target="_blank">Pexels &nearr;</a></li>
+            <li>Stock Photos - <a href="https://unsplash.com/" target="_blank">Unsplash &nearr;</a></li>
+        </ul>
+    </details>
+    <details>
+        <summary>What if I don't like the default styles?</summary>
+        <p>Most styles are editable through <em>CSS variables</em>. You can also add your own styles
+            inline, at the end of MVP.css or in a new stylesheet.</p>
+        <p><sup>PRO TIP</sup> If there are two conflicting CSS styles, the last one will take precedence.</p>
+        <pre>
+            <code>
+:root {
+--color: #118bee;
+}
+
+/* Lower in the CSS, or in a 2nd stylesheet */
+
+:root {
+--color: green; /* This will take precedence */
+}
+            </code>
+        </pre>
+    </details>
+    <details>
+        <summary>What if I still don't like it?</summary>
+        <p>That's OK, you probably shouldn't love your MVP. The goal of MVP.css is to help you
+            feel <i>slightly</i> less embarrased about it.</p>
+        <p><span style="font-size: xx-large; position: relative; top: 6px; margin-right: 7px;">👉</span> If you
+            want a CSS framework with more features check out <a href="https://bulma.io/" target="_blank">Bulma
+                &nearr;</a> or <a href="https://tailwindcss.com/" target="_blank">Tailwind &nearr;</a>.</p>
+    </details>
+</article>
+</main>
+
+
+    <!-- Footer -->
+<footer>
+    <hr>
+    <p>
+        <small>Contact info</small>
+    </p>
+</footer>
+
+
+</body>
+
+</html>

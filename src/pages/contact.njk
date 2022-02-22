@@ -1,0 +1,68 @@
+{% extends "src/templates/layout.njk" %}
+
+{% block content %}
+<main>
+<section id="testimonials">
+    <blockquote>
+        <img alt="Quote" src="./img/icon-quote.svg" height="80"><br>
+        "By far the easiest stylesheet I've ever used. It integrates easily into <s>one</s> all of my
+        startup&nbsp;projects."
+        <footer><img alt="MVP.css" src="./img/brand.png" height="36"><br><br><i>- Andy Brewer, Author of
+                MVP.css</i></footer>
+    </blockquote>
+</section>
+<hr>
+<section id="features">
+    <header>
+        <h2>Flexibility without complexity</h2>
+        <p>A few, clean styling options without all the bells and whistles</p>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>MVP.css</th>
+                <th>No CSS</th>
+                <th>Custom CSS</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Mobile friendly</td>
+            <td><b>&#10003;</b></td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+        </tr>
+        <tr>
+            <td>Works out of the box</td>
+            <td><b>&#10003;</b></td>
+            <td>&#10003;</td>
+            <td>&empty;</td>
+        </tr>
+        <tr>
+            <td>Easy to customize</td>
+            <td><b>&#10003;</b></td>
+            <td>&#10003;</td>
+            <td>&empty;</td>
+        </tr>
+        <tr>
+            <td>Only semantic HTML</td>
+            <td><b>&#10003;</b></td>
+            <td>&#10003;</td>
+            <td>&empty;</td>
+        </tr>
+        <tr>
+            <td>No class names</td>
+            <td><b>&#10003;</b></td>
+            <td>&#10003;</td>
+            <td>&empty;</td>
+        </tr>
+        <tr>
+            <td>Perfect for an MVP</td>
+            <td><b>&#10003;</b></td>
+            <td>&empty;</td>
+            <td>&empty;</td>
+        </tr>
+    </table>
+</section>
+</main>
+{% endblock %}
