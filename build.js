@@ -2,38 +2,44 @@ const nunjucks = require('nunjucks')
 const fs = require('fs');
 const path = require('path');
 
-// tell nunjucks where to find templates
-var env = nunjucks.configure(['./','/src/templates/','/src/pages/'], { autoescape: false });
-// Set extension of compiled output file. Use empty quotes for no extension.
-var extension = '.html'
+// build main website files
+buildFiles('src/pages/', 'public/');
+// build blog files to public/blog, all with the same template
+buildFiles('src/blog/', 'public/blog/', 'src/templates/_blog.njk');
 
-// Loop through all the files and render them
-fs.readdir('src/pages/', function (err, files) {
-  // handle errors reading dir
-  if (err) {
-    console.error("Could not list the directory.", err);
-    process.exit(1);
-  }
+
+/** buildFiles
+Takes the content files from the input directory, finds the corresponding
+template, and exports the rendered html document to the chosen directory.
+Note: exclude leading / from file path, assumed to run from project root
+@Params:
+input_dir      - directory of JSON content files
+output_dir     - directory in which to place the resulting html documents
+template_path  - the path to the template njk file into which the json content
+                 should be rendered. Defaults to null which finds the template
+                 based on the json filename w/underscore prepended and .njk ext.
+output_ext     - extension of the compiled output files. Defaults to .html (set
+                 to '' if you want no extension for cleaner urls but make sure
+                 your CDN can handle this properly).
+**/
+function buildFiles(input_dir, output_dir, template_path=null, output_ext='.html'){
+  // tell nunjucks where to find templates
+  var env = nunjucks.configure(['./','/src/templates/*/**', '/src/templates/'], { autoescape: false });
+  // get the json content files from input dir
+  var files = fs.readdirSync(input_dir);
+  // process each file
   files.forEach(file => {
-    //var filepath = 'src/pages/'+file;
-    if (path.extname(`src/pages/${file}`) == ".njk"){
-      // get the input njk file to be compiled
-      console.log(`**Building file ${file}`)
-      var inputfile = env.getTemplate(`src/pages/${file}`);
-      // get associated json data file, if applicable
-      var datafile;
-      try {
-        json = `src/pages/`+file.replace('.njk', '.json');
-        data = fs.readFileSync(json,'utf8');
-      } catch (err) {
-        console.log(`No JSON content file associated with ${file}`)
-        data = null;
-      }
-      // render the page/template/input data into a var
-      var outputfile = inputfile.render(JSON.parse(data));
-      // write the data to the file system
-      // TODO make work for non .njk files
-      fs.writeFileSync(`${__dirname}/public/${file.replace('.njk', extension)}`, outputfile);
-    }
-  });
-});
+    if (path.extname(`${input_dir}${file}`) != ".json"){ return; }
+    // read in the data file
+    console.log(`Building file ${file}...`)
+    var json = fs.readFileSync(`${input_dir}${file}`,'utf8');
+    // get associated template file
+    var tmpl_path = template_path ? template_path : `src/templates/_${file.replace('.json', '.njk')}`;
+    var tmpl = env.getTemplate(tmpl_path);
+    // render the page final page
+    var outfile = tmpl.render(JSON.parse(json));
+    fs.writeFileSync(
+      `${__dirname}/${output_dir}${file.replace('.json', output_ext)}`, outfile
+     );
+   });
+}
