@@ -24,22 +24,27 @@ output_ext     - extension of the compiled output files. Defaults to .html (set
 **/
 function buildFiles(input_dir, output_dir, template_path=null, output_ext='.html'){
   // tell nunjucks where to find templates
-  var env = nunjucks.configure(['./','/src/templates/*/**', '/src/templates/'], { autoescape: false });
+  let env = nunjucks.configure(['./','/src/templates/*/**', '/src/templates/'], { autoescape: false });
   // get the json content files from input dir
-  var files = fs.readdirSync(input_dir);
+  let files = fs.readdirSync(input_dir);
   // process each file
   files.forEach(file => {
-    if (path.extname(`${input_dir}${file}`) != ".json"){ return; }
+    let full_path = input_dir+file;
+    if (path.extname(full_path) != ".json"){ return; }
     // read in the data file
-    console.log(`Building file ${file}...`)
-    var json = fs.readFileSync(`${input_dir}${file}`,'utf8');
+    let json = fs.readFileSync(full_path,'utf8');
     // get associated template file
-    var tmpl_path = template_path ? template_path : `src/templates/_${file.replace('.json', '.njk')}`;
-    var tmpl = env.getTemplate(tmpl_path);
+    let tmpl_path = template_path ? template_path : `src/templates/_${file.replace('.json', '.njk')}`;
+    let tmpl = env.getTemplate(tmpl_path);
     // render the page final page
-    var outfile = tmpl.render(JSON.parse(json));
-    fs.writeFileSync(
-      `${__dirname}/${output_dir}${file.replace('.json', output_ext)}`, outfile
-     );
+    let outfile = tmpl.render(JSON.parse(json));
+    let full_out_path = `${__dirname}/${output_dir}${file.replace('.json', output_ext)}`
+    fs.writeFileSync(full_out_path, outfile);
+    console.log(`
+    ============
+      Built content file ${full_path}...
+      - Using template ${tmpl_path},
+      - Output to ${full_out_path}
+    ============ `)
    });
 }
