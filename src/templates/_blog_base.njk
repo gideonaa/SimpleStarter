@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% import "src/templates/macros/allow_index.njk" as engines %}
+    {{ engines.allowIndex(allowed=allow_index) }}
+    {% include "src/templates/partials/head/_metadata.njk" %}
+    {% include "src/templates/partials/head/_scripts.njk" %}
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% include "src/templates/partials/header/_blog_header.njk" %}
+    <main>
+      <h1>{{title}}</h1>
+      <span>Posted on: {{date_published}}</span>
+      {% block content %} {{content}}{% endblock %}
+    </main>
+  {% include "src/templates/partials/footer/_simple_footer.njk" %}
+  </body>
+
+</html>

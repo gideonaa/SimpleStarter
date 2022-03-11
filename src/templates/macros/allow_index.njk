@@ -1,0 +1,5 @@
+{% macro allowIndex(allowed='off') %}
+  {% if allowed=='off'%}
+    <meta name="robots" content="no-index">
+  {% endif %}
+{% endmacro %}

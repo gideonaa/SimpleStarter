@@ -115,6 +115,7 @@ main header {
 }
 
 header {
+    padding-bottom: .5rem;
     text-align: var(--justify-important);
 }
 
@@ -139,9 +140,8 @@ section header {
 nav {
     align-items: center;
     display: flex;
-    font-weight: bold;
     justify-content: space-between;
-    margin-bottom: 7rem;
+    /* margin-bottom: 7rem; */
 }
 
 nav ul {
@@ -270,7 +270,7 @@ sup {
 a {
     color: var(--color-link);
     display: inline-block;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
 }
 

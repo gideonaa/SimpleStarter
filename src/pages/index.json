@@ -1,0 +1,15 @@
+{
+  "title": "Home",
+  "header_text": "Page Heading with <i>Italics</i> and <u>Underline</u>",
+  "subheader_text":"Page Subheading with <mark>highlighting</mark>",
+  "testimonial": "This is a gushing testimonial. You've never encountered anything greater than this.",
+  "card_section": {
+            "header": "Some content, check it out",
+            "subheader": "Have some cards in your layout",
+            "card1_head": "Card Heading", "card1_content": "<p>Card Content*</p><p><small>*with small content</small></p>",
+            "card2": "Another Card",
+            "card3": "Yes, Another Card"
+            },
+  "content": "Here is some content. <b>Wow!</b>",
+  "allow_index": "on"
+}

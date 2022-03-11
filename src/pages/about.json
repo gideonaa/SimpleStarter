@@ -1,0 +1,12 @@
+{
+  "slug":"about.html",
+  "title": "About Us",
+  "faqs": {
+    "faq1":"Why would I use this?",  "answer1": "<p>If you just want to launch already.</p><p><sup>PRO TIP</sup> An MVP is a temporary site, it doesn't have to be <i>and shouldn't be</i> perfect.</p>",
+    "faq2":"What skills will I need?",  "answer2": "<p>Mostly HTML, maybe a hint of CSS if you want to get fancy.</p><p><i>CSS</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress max='100' value='5'>5</progress></p><p><i>Design</i>&nbsp;&nbsp; <progress max='100' value='0'>0</progress></p><p><i>HTML</i>&nbsp;&nbsp;&nbsp;&nbsp; <progress max='100' value='100'>100</progress></p>",
+    "faq3":"Is there a minified version?",  "answer3": "<p>No, you don't need one for an MVP.</p>",
+    "faq4":"How can I improve my design?",  "answer4": "<p>Here are some helpful resources:</p> <ul> <li>Emojis - <a href=\"https://www.emojicopy.com/\" target=\"_blank\">Emojicopy             &nearr;</a></li>     <li>Icons - <a href=\"https://www.toptal.com/designers/htmlarrows/\" target=\"_blank\">HTML Entities             List by TopTal             &nearr;</a></li>     <li>Icons - <a href=\"https://thenounproject.com/\" target=\"_blank\">TheNounProject&nearr;</a></li> <li>Illustrations - <a href=\"https://gallery.manypixels.co/\" target=\"_blank\">Manypixels             &nearr;</a></li>     <li>Illustrations - <a href=\"https://undraw.co/illustrations\" target=\"_blank\">Undraw &nearr;</a>     </li>     <li>Logo - <a href=\"https://www.namecheap.com/logo-maker/app/\" target=\"_blank\">Namecheap Logo             Maker &nearr;</a></li>     <li>Product Shots - <a href=\"https://www.screely.com/\" target=\"_blank\">Screely &nearr;</a></li><li>Stock Photos - <a href=\"https://www.pexels.com/\" target=\"_blank\">Pexels &nearr;</a></li>     <li>Stock Photos - <a href=\"https://unsplash.com/\" target=\"_blank\">Unsplash &nearr;</a></li> </ul>",
+    "faq5":"What if I don't like the default styles?", "answer5": "<p>Most styles are editable through <em>CSS variables</em>. You can also add your own styles inline, at the end of MVP.css or in a new stylesheet.</p>\n<p><sup>PRO TIP</sup> If there are two conflicting CSS styles, the last one will take precedence.</p>"
+  },
+  "allow_index": "on"
+}

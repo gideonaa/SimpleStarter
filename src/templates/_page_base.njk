@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% import "src/templates/macros/allow_index.njk" as engines %}
+      {{ engines.allowIndex(allowed=allow_index) }}
+      {% include "src/templates/partials/head/_metadata.njk" %}
+      {% include "src/templates/partials/head/_scripts.njk" %}
+      {% include "src/templates/partials/head/_links.njk" %}
+      <title>{% if title %} {{title}} {% else %}My Default Title{% endif %}</title>
+  </head>
+  <body>
+      {% include "src/templates/partials/header/_header.njk" %}
+
+      {% block content %}
+      <!-- Content for the specific page is embedded here on build-->
+      {% endblock %}
+
+      {% include "src/templates/partials/footer/_main_footer.njk" %}
+  </body>
+</html>

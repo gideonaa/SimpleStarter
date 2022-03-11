@@ -1,0 +1,144 @@
+{% extends "src/templates/_page_base.njk" %}
+
+{% block content %}
+  <header>
+    <section>
+      <h1>{{header_text}}</h1>
+      {{subheading}}
+      <p>
+        {{subheader_text}}
+      </p>
+      <br>
+      <p>
+        <a href="#">
+          <i>Italic Link Button</i>
+        </a>
+        <a href="#">
+          <b>Bold Link Button &rarr;</b>
+        </a>
+      </p>
+    </section>
+    <hr>
+  </header>
+  <main>
+    <section id="testimonials">
+        <blockquote>
+            <img alt="Quote" src="./img/icon-quote.svg" height="80"><br>
+            "{{testimonial}}"
+            <footer><img alt="MVP.css" src="./img/brand.png" height="36"><br><br><i>- Some guy</i></footer>
+        </blockquote>
+    </section>
+    <hr>
+    <section>
+      <header>
+        <h2>{{card_section.header}}</h2>
+        <p>{{card_section.subheader}}</p>
+      </header>
+      <aside>
+        <h3>{{card_section.card1_head}}</h3>
+        {{card_section.card1_content}}
+      </aside>
+      <aside>
+        <h3>Card heading</h3>
+        <p>Card content
+          <sup>with notification</sup>
+        </p>
+      </aside>
+      <aside>
+        <h3>Card heading</h3>
+        <p>Card content</p>
+      </aside>
+    </section>
+    <hr>
+    <section id="features">
+      <header>
+          <h2>Flexibility without complexity</h2>
+          <p>A few, clean styling options without all the bells and whistles</p>
+      </header>
+      <table>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>MVP.css</th>
+                  <th>No CSS</th>
+                  <th>Custom CSS</th>
+              </tr>
+          </thead>
+          <tr>
+              <td>Mobile friendly</td>
+              <td><b>&#10003;</b></td>
+              <td>&#10003;</td>
+              <td>&#10003;</td>
+          </tr>
+          <tr>
+              <td>Works out of the box</td>
+              <td><b>&#10003;</b></td>
+              <td>&#10003;</td>
+              <td>&empty;</td>
+          </tr>
+          <tr>
+              <td>Easy to customize</td>
+              <td><b>&#10003;</b></td>
+              <td>&#10003;</td>
+              <td>&empty;</td>
+          </tr>
+          <tr>
+              <td>Only semantic HTML</td>
+              <td><b>&#10003;</b></td>
+              <td>&#10003;</td>
+              <td>&empty;</td>
+          </tr>
+          <tr>
+              <td>No class names</td>
+              <td><b>&#10003;</b></td>
+              <td>&#10003;</td>
+              <td>&empty;</td>
+          </tr>
+          <tr>
+              <td>Perfect for an MVP</td>
+              <td><b>&#10003;</b></td>
+              <td>&empty;</td>
+              <td>&empty;</td>
+          </tr>
+      </table>
+    </section>
+    <hr>
+    <article>
+      <h2>Left-aligned header</h2>
+      <p>Left-aligned paragraph</p>
+      <aside>
+        <p>Article callout</p>
+      </aside>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+      </ul>
+      <figure>
+        <img alt="Stock photo" src="https://via.placeholder.com/1080x500?text=Amazing+stock+photo">
+        <figcaption>
+          <i>Image caption</i>
+        </figcaption>
+      </figure>
+    </article>
+    <hr>
+    <div>
+      <details>
+        <summary>Expandable title</summary>
+        <p>Revealed content</p>
+      </details>
+      <details>
+        <summary>Another expandable title</summary>
+        <p>More revealed content</p>
+      </details>
+      <br>
+      <p>Inline
+        <code>code</code>
+        snippets</p>
+      <pre>
+            <code>
+// preformatted code block
+            </code>
+        </pre>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "src/templates/_page_base.njk" %}
+
+{% block content %}
+<main>
+  <article id="faq">
+      <h2>Frequently Asked Questions {{title}}</h2>
+      <details>
+          <summary>{{faqs.faq1}}</summary>
+          {{faqs.answer1}}
+      </details>
+      <details>
+          <summary>{{faqs.faq2}}</summary>
+          {{faqs.answer2}}
+      </details>
+      <details>
+          <summary>{{faqs.faq3}}</summary>
+          {{faqs.answer3}}
+      </details>
+      <details>
+          <summary>{{faqs.faq4}}</summary>
+          {{faqs.answer4}}
+      </details>
+      <details>
+          <summary>{{faqs.faq5}}</summary>
+          {{faqs.answer5}}
+      </details>
+  </article>
+  <hr>
+  <h3>These tags are pre-styled by MVP.css</h3>
+  <ul>
+      <li><code>&lt;a&gt;</code> <small>&mdash; text links</small>
+          <ul>
+              <li><code>&lt;a&gt;&lt;b&gt;</code>, <code>&lt;a&gt;&lt;strong&gt;</code> <small>&mdash; solid
+                      link buttons</small>
+              </li>
+              <li><code>&lt;a&gt;&lt;em&gt;</code>, <code>&lt;a&gt;&lt;i&gt;</code> <small>&mdash; outlined
+                      link buttons</small>
+              </li>
+          </ul>
+      </li>
+      <li><code>&lt;article&gt;</code> <small>&mdash; content area with normal styling</small>
+          <ul>
+              <li><code>&lt;article&gt;&lt;aside&gt;</code> <small>&mdash; text callout</small>
+              </li>
+          </ul>
+      </li>
+      <li><code>&lt;blockquote&gt;</code> <small>&mdash; quote callout</small>
+          <ul>
+              <li><code>&lt;blockquote&gt;&lt;footer&gt;</code> <small>&mdash; quote attribution</small>
+              </li>
+          </ul>
+      </li>
+      <li><code>&lt;body&gt;</code> <small>&mdash; default parent element</small></li>
+      <li><code>&lt;button&gt;</code> <small>&mdash; form buttons</small></li>
+      <li><code>&lt;code&gt;</code> <small>&mdash; inline code highlighting</small></li>
+      <li><code>&lt;details&gt;</code> <small>&mdash; default expandable content section</small>
+          <ul>
+              <li><code>&lt;details&gt;&lt;summary&gt;</code> <small>&mdash; expandable heading</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;div&gt;</code> <small>&mdash; unstyled element</small></li>
+      <li><code>&lt;figure&gt;</code> <small>&mdash; image callouts</small>
+          <ul>
+              <li><code>&lt;figure&gt;&lt;figcaption&gt;</code> <small>&mdash; image callout captions</small>
+              </li>
+          </ul>
+      </li>
+      <li><code>&lt;footer&gt;</code> <small>&mdash; footer area</small></li>
+      <li><code>&lt;form&gt;</code> <small>&mdash; small form area</small>
+          <ul>
+              <li><code>&lt;form&gt;&lt;input&gt;</code> <small>&mdash; short input field</small></li>
+              <li><code>&lt;form&gt;&lt;label&gt;</code> <small>&mdash; form field labels</small></li>
+              <li><code>&lt;form&gt;&lt;select&gt;</code> <small>&mdash; dropdown options container</small>
+                  <ul>
+                      <li><code>&lt;form&gt;&lt;select&gt;&lt;option&gt;</code> <small>&mdash; dropdown option
+                              items</small></li>
+                  </ul>
+              </li>
+              <li><code>&lt;form&gt;&lt;textarea&gt;</code> <small>&mdash; large input field</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;header&gt;</code> <small>&mdash; content area with centered styling</small></li>
+      <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,
+          <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> <small>&mdash; headings</small></li>
+      <li><code>&lt;hr&gt;</code> <small>&mdash; horizontal rule (divider)</small></li>
+      <li><code>&lt;main&gt;</code> <small>&mdash; main content area</small></li>
+      <li><code>&lt;mark&gt;</code> <small>&mdash; text highlighting</small></li>
+      <li><code>&lt;nav&gt;</code> <small>&mdash; top navigation</small>
+          <ul>
+              <li><code>&lt;nav&gt;&lt;ul&gt;</code> <small>&mdash; nav links container</small></li>
+              <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; nav link items</small></li>
+              <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;ul&gt;</code> <small>&mdash; nav dropdown
+                      container</small></li>
+              <li><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; nav dropdown
+                      link items</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;ol&gt;</code> <small>&mdash; numbered list container</small>
+          <ul>
+              <li><code>&lt;ol&gt;&lt;li&gt;</code> <small>&mdash; numbered list items</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;p&gt;</code> <small>&mdash; paragraph tag</small></li>
+      <li><code>&lt;pre&gt;</code> <small>&mdash; preformatted text</small>
+          <ul>
+              <li><code>&lt;pre&gt;&lt;code&gt;</code> <small>&mdash; code block</small></li>
+              <li><code>&lt;pre&gt;&lt;samp&gt;</code> <small>&mdash; computer output block</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;samp&gt;</code> <small>&mdash; inline computer output</small></li>
+      <li><code>&lt;section&gt;</code> <small>&mdash; content area for centered / special content</small>
+          <ul>
+              <li><code>&lt;section&gt;&lt;aside&gt;</code> <small>&mdash; content card</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;small&gt;</code> <small>&mdash; smaller text</small></li>
+      <li><code>&lt;sup&gt;</code> <small>&mdash; raised text (notification bubbles)</small></li>
+      <li><code>&lt;table&gt;</code> <small>&mdash; data table</small>
+          <ul>
+              <li><code>&lt;table&gt;&lt;td&gt;</code> <small>&mdash; data table cell</small></li>
+              <li><code>&lt;table&gt;&lt;th&gt;</code> <small>&mdash; data table header cell</small></li>
+              <li><code>&lt;table&gt;&lt;thead&gt;</code> <small>&mdash; data table header section</small>
+              </li>
+              <li><code>&lt;table&gt;&lt;tr&gt;</code> <small>&mdash; data table row</small></li>
+          </ul>
+      </li>
+      <li><code>&lt;ul&gt;</code> <small>&mdash; unordered list container</small>
+          <ul>
+              <li><code>&lt;ul&gt;&lt;li&gt;</code> <small>&mdash; unordered list item</small></li>
+          </ul>
+      </li>
+  </ul>
+</main>
+{% endblock %}
