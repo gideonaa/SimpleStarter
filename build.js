@@ -1,11 +1,12 @@
 const nunjucks = require('nunjucks')
 const fs = require('fs');
 const path = require('path');
+var formatter = require('html-formatter');
 
 // build main website files
 buildFiles('src/pages/', 'public/');
 // build blog files to public/blog, all with the same template
-buildFiles('src/blog/', 'public/blog/', 'src/templates/_blog.njk');
+buildFiles('src/blog/', 'public/blog/', 'src/templates/_blog_base.njk');
 
 
 /** buildFiles
@@ -39,12 +40,12 @@ function buildFiles(input_dir, output_dir, template_path=null, output_ext='.html
     // render the page final page
     let outfile = tmpl.render(JSON.parse(json));
     let full_out_path = `${__dirname}/${output_dir}${file.replace('.json', output_ext)}`
-    fs.writeFileSync(full_out_path, outfile);
+    fs.writeFileSync(full_out_path,  formatter.render(outfile));
     console.log(`
     ============
-      Built content file ${full_path}...
-      - Using template ${tmpl_path},
-      - Output to ${full_out_path}
+    Built content file ${full_path}...
+    - Using template ${tmpl_path},
+    - Output to ${full_out_path}
     ============ `)
    });
 }

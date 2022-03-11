@@ -4,11 +4,10 @@
   "description": "Simple starter kit for clean new websites with minimalist structure using nunjucks for DRY html layout templates.",
   "main": "index.html",
   "dependencies": {
+    "html-formatter": "^0.1.9",
     "nunjucks": "^3.2.3"
   },
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js"
