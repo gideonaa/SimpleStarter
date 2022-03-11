@@ -1,23 +1,28 @@
-<p style="text-align: center;">
-<h1>SimpleStarter</1>
-<h3>Just build HTML files, keep it simple 🙌 </h3>
-</p>
-<hr>
-### Simple, minimalist website starter kit with reusable HTML layouts.
+# SimpleStarter
+
+### Simple, minimalist website starter kit with reusable HTML layouts. 🌴
 
 How do you build a new site these days? Wordpress is bloated, requires constant security awareness, and maintaining a database is often overkill. Likewise, using a Javascript framework requires dozens of new tools, dependencies and specialization.
 
-#### Ok, so why not just use plain old HTML?
+This boilerplate project starter uses a single Node dependency to build your site from easily maintainable, separate blocks of HTML files.
 
-Well, mainly because it sucks to string together and maintain dozens of pages with repeated code for the headers, footer, nav, etc. That's solved here by compiling reusable templates and partials into a set of HTML documents to be deployed as static files.
 
-The result is fast-loading, SEO-friendly, and best of all *easy to maintain* sites.
+
+#### Ok, so why do I need this if I can just use plain old HTML?
+
+You can! But plain HTML doesn't allow you separate commonly repeated code into partials and create reusable document templates. That means editing dozens of files to make a small change to a header.
+
+#### Well, why not build a progressive web app with a Javascript framework?
+
+Because sometimes you just want simple static-hosted informational website that loads super fast with no learning curve for future maintainers. Also, pages that are dynamically built by JS are often harder for search engines to parse.
+
+Deploying simple, static HTML files results in fast-loading, SEO-friendly, future-proof, and best of all *easy to maintain* sites.
 
 #### Ok, but why not use Web Components?
 Because they're [still not really ready for prime time.](https://caniuse.com/?search=web%20components)
 
-### Why not render templates on the backend with PHP, Django, CoolNewNodeFramework.js, etc?
-Because sometimes you just want simple static-hosted pages that load super fast with no learning curve for future maintainers. Besides, nowadays most backend functionality is delivered by 3rd party micro-SaaS APIs that can be integrated with simple AJAX calls that can be easily added to your HTML partials. If you need complex views and strongly-coupled backend functionality, this isn't right for you.
+#### What if I decide I need some backend functionality?
+Nowadays most backend functionality can be delivered by 3rd party micro-SaaS APIs that can be integrated with simple AJAX calls that can be easily added to your HTML partials. If you need complex views and strongly-coupled backend functionality, this isn't right for you.
 
 #### Ok, but what packages/libraries are needed to create HTML templates?
 The only dependency is [Nunjucks by Mozilla](https://mozilla.github.io/nunjucks/api.html#browser-usage) which is executed using [NodeJS](https://nodejs.org/en/)/[NPM](https://www.npmjs.com/).
@@ -31,18 +36,16 @@ Check out the WYSIWYG text editor in `admin/index.html`. Load it up online and p
 #### What's happening during build?
 `build.js` takes files from `src/pages/` and finds the templates they inherit from `src/templates` while applying any partials referenced from `src/templates/partials` to generate simple HTML pages that are placed in `public` for deployment.
 
-#### Ok, but how come you're not building with Glerp, Yulp, Webstack, etc.?
+#### Ok, but why don't I build using Glerp, Yulp, Webstack, etc.?
 Ok I made those up. But tools like Gulp, Grunt, Yarn, WebPack, etc are just more stuff to remember and maintain. Less is more.
 
 #### How can I learn about Nunjucks syntax for creating pages with templates and partials?
 Checkout the [Nunjucks Docs](https://mozilla.github.io/nunjucks/)
-Or this [tutorial](https://zellwk.com/blog/nunjucks-with-gulp/) ...but ignore the gulp stuff because why not [just use npm](https://www.freecodecamp.org/news/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8/)
+or this [tutorial](https://zellwk.com/blog/nunjucks-with-gulp/) ...but ignore the gulp stuff because why not [just use npm](https://www.freecodecamp.org/news/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8/)
 
 #### Ok, but what is this again?
 This repo is a simple and clean scaffolding for popping up new websites with just HTML, CSS and JS as needed. This is a starting point with a few informational pages and a blog.
 
-#### Ok, but I would lay this out a little differently
-This structure is *just a suggestion.* Feel free to move things around to your liking. Modify the `build.js` file to place the resulting files where you want them. [Go ahead and fork it.](https://github.com/gideonaa/SimpleStarter/fork)
 
 #### Directory Structure
 ```
@@ -96,10 +99,9 @@ project/
       └─ README.md      
 ```
 
-Note that the page content can be store separately in JSON files and compiled
-into the structure layer. This is optional, you can always write content directly into
-any .njk file. But keeping structure and content separate provides many advantages
-including easier editing and the option of internationalization.
+This structure is *just a suggestion.* Feel free to move things around to your liking. Modify the `build.js` file to place the resulting files where you want them. [Go ahead and fork it.](https://github.com/gideonaa/SimpleStarter/fork)
+
+Note that the page content can be store separately in JSON files and compiled into the structure layer. This is optional, you can always write content directly into any .njk template file. But keeping structure and content separate provides many advantages including easier editing and the option of internationalization.
 
 
 #### Notes
