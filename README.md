@@ -1,5 +1,8 @@
-# Keep It Simple 🙌
-
+<p style="text-align: center;">
+<h1>SimpleStarter</1>
+<h3>Just build HTML files, keep it simple 🙌 </h3>
+</p>
+<hr>
 ### Simple, minimalist website starter kit with reusable HTML layouts.
 
 How do you build a new site these days? Wordpress is bloated, requires constant security awareness, and maintaining a database is often overkill. Likewise, using a Javascript framework requires dozens of new tools, dependencies and specialization.
@@ -39,7 +42,7 @@ Or this [tutorial](https://zellwk.com/blog/nunjucks-with-gulp/) ...but ignore th
 This repo is a simple and clean scaffolding for popping up new websites with just HTML, CSS and JS as needed. This is a starting point with a few informational pages and a blog.
 
 #### Ok, but I would lay this out a little differently
-This structure is *just a suggestion.* Feel free to move things around to your liking. Modify the `build.js` file to place the resulting files where you want them. [Go ahead and fork it.](https://github.com/gideonaa/site-starter/fork)
+This structure is *just a suggestion.* Feel free to move things around to your liking. Modify the `build.js` file to place the resulting files where you want them. [Go ahead and fork it.](https://github.com/gideonaa/SimpleStarter/fork)
 
 #### Directory Structure
 ```
