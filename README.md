@@ -53,7 +53,7 @@ project/
 └─ admin/  # optional 'admin' page w/word processor for generating html pages
     ├── admin.css
     └── index.html
-└─ public/  # dir containing compiled files for deployment
+└─ .public/  # dir containing compiled files for deployment (hidden to minimize direct editing)
      ├── about.html
      ├── contact.html
      ├── index.html
