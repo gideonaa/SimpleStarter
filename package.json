@@ -4,7 +4,7 @@
   "description": "Simple starter kit for clean new websites with minimalist structure using nunjucks for DRY html layout templates.",
   "main": "index.html",
   "dependencies": {
-    "html-formatter": "^0.1.9",
+    "html-prettify": "^1.0.6",
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {},
