@@ -22,19 +22,22 @@ users unless the proper changes are made to the build file to sanitize content.
 <body>
   <!-- Quill Stylesheet -->
   <h1>Simple Site CMS</h1>
-  <label>Allow Search Engine Index</label><br>
-  <label class="switch">
-    <input type="checkbox" id="allow_index">
-    <span class="slider round"></span>
-  </label><br><br>
-  <label>Date Published</label>
-  <input type="date" id="date_published">
-  <label>Date Updated</label>
-  <input type="date" id="date_updated">
-  <label for="title">URL Slug</label><br>
-  <input type="text" id="slug"/>
-  <label for="title">Post Title</label><br>
-  <input type="text" id="title"/>
+  <form>
+    <label>Allow Search Engine Index</label><br>
+    <label class="switch">
+      <input type="checkbox" id="allow_index">
+      <span class="slider round"></span>
+    </label><br><br>
+    <label>Date Published</label>
+    <input type="date" id="date_published">
+    <label>Date Updated</label>
+    <input type="date" id="date_updated">
+    <label for="title">URL Slug</label><br>
+    <input type="text" id="slug"/>
+    <label for="title">Post Title</label><br>
+    <input type="text" id="title"/>
+  </form>
+
   <!-- Create the editor container -->
   <div id="editor">
   </div>
@@ -42,81 +45,97 @@ users unless the proper changes are made to the build file to sanitize content.
 
   <!-- Include Quill library -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
   <!-- Instantiate Quill editor and save callback -->
   <script>
-  var colors =  ['white','red', 'green','lightgreen','blue','purple','black', 'color-picker'];
-  var toolbarOptions = [
-      ['bold', 'italic', 'underline', 'strike'],
-      ['blockquote', 'code-block'],
-      ['link', 'image'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      [{ 'script': 'sub'}, { 'script': 'super' }],
-      [{ 'indent': '-1'}, { 'indent': '+1' }],
-      // [{ 'size': ['small', false, 'large', 'huge'] }],
-      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      [{ 'color': colors }, { 'background': colors }],
-      [{ 'font': ['sans-serif'] }], [{ 'align': [] }]
-    ];
-    var quill = new Quill('#editor', {
-      theme: 'snow',
-      modules:{
-        toolbar: toolbarOptions
-      }
-    });
-    // On text change, create downloadable json blob, attach to save button url
-    quill.on('text-change', function(delta, oldDelta, source) {
-      var slug = document.getElementById('slug').value;
-      var title = document.getElementById('title').value;
-      var allow_index = document.getElementById('allow_index').value;
-      var date_published = document.getElementById('date_published').value;
-      var date_updated = document.getElementById('date_updated').value;
-      var content = quill.root.innerHTML;
-      slug = '' ? 'content.json' : slug + '.json';
-
-      var blob = new Blob(
-        [JSON.stringify(
-          {
-            'slug': slug,
-            'title': title,
-            'date_published': date_published,
-            'date_updated': date_updated,
-            'content': content,
-            'allow_index': allow_index
-          })
-        ],
-        {type: "application/json"}
-       );
-      // create downloadable link
-      var url = window.URL.createObjectURL(blob);
-      var anchor = document.getElementById("save");
-      anchor.href = url;
-      anchor.download = slug;
-    });
-
-    function showColorPicker(value) {
-      if (value === 'color-picker') {
-        var picker = document.getElementById('color-picker');
-        if (!picker) {
-          picker = document.createElement('input');
-          picker.id = 'color-picker';
-          picker.type = 'color';
-          picker.style.display = 'none';
-          picker.value = '#FF0000';
-          document.body.appendChild(picker);
-
-          picker.addEventListener('change', function() {
-            quill.format('color', picker.value);
-          }, false);
+    // instantiate editor colors and options
+    var colors =  ['white','red', 'green','lightgreen','blue','purple','black', 'color-picker'];
+    var toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        ['link', 'image'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'script': 'sub'}, { 'script': 'super' }],
+        [{ 'indent': '-1'}, { 'indent': '+1' }],
+        // [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'color': colors }, { 'background': colors }],
+        [{ 'font': ['sans-serif'] }], [{ 'align': [] }]
+      ];
+      // instantiate editor
+      var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules:{
+          toolbar: toolbarOptions
         }
-        picker.click();
-      } else {
-        quill.format('color', value);
+      });
+
+      // Save automatically when text in editor changes
+      quill.on('text-change', function(delta, oldDelta, source) {
+        saveFile();
+      });
+
+      // Create downloadable json blob, attach to save button url
+      // so that when "Save" is clicked, it downloads
+      function saveFile(){
+        var slug = document.getElementById('slug').value;
+        var title = document.getElementById('title').value;
+        var allow_index = document.getElementById('allow_index');
+        var allow_index = allow_index.checked ? 'on' : 'off';
+        var date_published = document.getElementById('date_published').value;
+        var date_updated = document.getElementById('date_updated').value;
+        var content = quill.root.innerHTML;
+        slug = '' ? 'content.json' : slug + '.json';
+
+        var blob = new Blob(
+          [JSON.stringify(
+            {
+              'slug': slug,
+              'title': title,
+              'date_published': date_published,
+              'date_updated': date_updated,
+              'content': content,
+              'allow_index': allow_index
+            })
+          ],
+          {type: "application/json"}
+         );
+        // create downloadable link
+        var url = window.URL.createObjectURL(blob);
+        var anchor = document.getElementById("save");
+        anchor.href = url;
+        anchor.download = slug;
       }
-    }
 
-  var toolbar = quill.getModule('toolbar');
-  toolbar.addHandler('color', showColorPicker);
+      function showColorPicker(value) {
+        if (value === 'color-picker') {
+          var picker = document.getElementById('color-picker');
+          if (!picker) {
+            picker = document.createElement('input');
+            picker.id = 'color-picker';
+            picker.type = 'color';
+            picker.style.display = 'none';
+            picker.value = '#FF0000';
+            document.body.appendChild(picker);
 
+            picker.addEventListener('change', function() {
+              quill.format('color', picker.value);
+            }, false);
+          }
+          picker.click();
+        } else {
+          quill.format('color', value);
+        }
+      }
+
+      var toolbar = quill.getModule('toolbar');
+      toolbar.addHandler('color', showColorPicker);
+
+
+      var form = document.querySelector('form');
+      form.addEventListener('change', function() {
+          saveFile()
+      });
   </script>
 
 </body>
