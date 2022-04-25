@@ -123,6 +123,7 @@ users unless the proper changes are made to the build file to sanitize content.
           document.getElementById('slug').value = json.slug;
           document.getElementById('title').value = json.title;
           document.getElementById('allow_index').value = json.allow_index;
+          document.getElementById('allow_index').checked = json.allow_index == "on" ? true : false
           document.getElementById('date_published').value = json.date_published;
           document.getElementById('date_updated').value = json.date_updated;
           quill.clipboard.dangerouslyPasteHTML(json.content);
